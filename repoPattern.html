@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="repoPattern.js"></script>
+    <script>
+        function createRow(emp){
+            let row=document.createElement("tr");
+            row.innerHTML=`<td>${emp.empid}</td>
+            <td>${emp.empname}</td>
+            <td>${emp.empadress}</td>
+            <td>${emp.empsalary}</td>
+            
+            `;
+            return row;
+            
+        }
+        window.addEventListener("load",function(){
+            const table=document.querySelector("#tblRecords");
+            for(const emp of data){
+
+                let row=createRow(emp);
+                table.appendChild(row);
+            }
+
+        })
+    </script>
+</head>
+<body>
+    <h1>Employee Monitoring System</h1>
+    <hr>
+<div>
+    <h2>
+        List of Employees
+    </h2>
+
+    <table border="1" id="tblRecords">
+        <tr>
+            <th>Employee id</th>
+            <th>Employee Name</th>
+            <th>Employee Adress</th>
+            <th>Employee Salary</th>
+        </tr>
+    </table>
+</div>
+
+<div></div>
+<div></div>
+</body>
+</html>

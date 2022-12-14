@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./crudOperation.js"></script>
+</head>
+<body>
+    <div>
+        <input id="txtBook" placeholder="Enter your Favorite book">
+        <button onclick="onAddItem()">+</button>
+        <button>X</button>
+        <button>Edit</button>
+        <p id="display">
+            <ol id="list">
+        </p>
+    </div>
+
+    <script>
+        const populate =function(){
+            let ol=document.getElementById("list");
+            ol.innerHTML="";
+            const data=getAll();
+            for(let i=0;i<data.length;i++){
+                const line=`<li>
+                    ${data[i]}
+                    
+            <a href="#" onclick="onDeleteItem(${i})"> delete</a>
+            <a href="#" onclick="onUpdateItem(${i})"> update</a>
+
+                    </li>`
+                ol.innerHTML+=line
+            }
+
+        }
+        const onDeleteItem=function(item){
+            deleteElement(item);
+            populate();
+        }
+        // const onUpdateItem=function(item){
+        //     updateElement=
+        
+
+        const onAddItem=function(){
+            const name=document.getElementById("txtBook").value;
+            addElement(name)
+            alert("your book was added succesfuly");
+            populate();
+        }
+        
+        addElement("mybook") 
+        addElement("yourbook")
+        addElement("hisBook")
+        addElement("theirBook")
+        document.getElementById("display").innerText=books;
+    </script>
+</body>
+</html>

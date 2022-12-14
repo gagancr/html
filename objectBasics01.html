@@ -1,0 +1,30 @@
+<script src="ex01obj.js"></script>
+<script>
+    window.addEventListener("load",function() {
+        document.getElementById("id").value=obj.id
+        document.getElementById("name").value=obj.name
+        document.getElementById("address").value=obj.adress
+        document.getElementById("salary").value=obj.salary
+
+        document.getElementById("empid").value=employeeObj.empid
+        document.getElementById("empname").value=employeeObj.empname
+        document.getElementById("empadress").value=employeeObj.empadress
+        document.getElementById("empsalary").value=employeeObj.empsalary
+        
+    })
+</script>
+<h1>object oriented programming using JS</h1>
+<div>
+    <input type="number" id="id"  placeholder="id"> <br> <br>
+    <input type="text" id="name" placeholder="name"> <br><br>
+    <input type="text" id="address" placeholder="adress">  <br><br>
+    <input type="number" id="salary" placeholder="salary"><br><br>
+    <p><button>save changes</button></p>
+    <p><button>clear</button></p>
+</div>
+<div>
+    <p><input type="text" id="empid"></p>
+    <p><input type="text" id="empname"></p>
+    <p><input type="text" id="empadress"></p>
+    <p><input type="text" id="empsalary"></p>
+</div>
